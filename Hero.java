@@ -1,10 +1,10 @@
-public class ComicBook {
+public class Hero {
     private String title;
     private int issue;
     private String hero;
     private int powerLevel;
 
-    public ComicBook(String title, int issue, String hero, int powerLevel) {
+    public Hero(String title, int issue, String hero, int powerLevel) {
         this.title = title;
         this.issue = issue;
         this.hero = hero;
