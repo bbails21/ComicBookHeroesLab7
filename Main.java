@@ -1,5 +1,4 @@
-
-public class ComicBookManager {
+public class Main {
     public static void main(String[] args) {
         // Step 1: Create arrays for comic book data
         String[] titles = {"Spider-Man", "Iron Man", "Captain Marvel"};
@@ -17,10 +16,10 @@ public class ComicBookManager {
         }
 
         // Step 3: Call search method
-        ComicBookUtils.searchComic(titles, heroes,  "Iron Man");
+        HeroManager.searchComic(titles, heroes, "Iron Man");
 
         // Step 4: Call average power method
-        double avg = ComicBookUtils.calculateAverage(powerLevels);
+        double avg = HeroManager.calculateAverage(powerLevels);
         System.out.println("Average Power Level: " + avg);
     }
 }
