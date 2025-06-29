@@ -1,32 +1,33 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class HeroManager {
-    private ArrayList<Hero> heroList;
+    private static ArrayList<Hero> heroList = new ArrayList<>();
 
-    public HeroManager() {
-        heroList = new ArrayList<>();
-    }
-
-    public void addHero(Hero hero) {
+    public static void addHero(Hero hero) {
         heroList.add(hero);
     }
 
-    public void removeHero(String name) {
-        heroList.removeIf(h -> h.getTitle().equalsIgnoreCase(name));
+    public static void removeHero(String title) {
+        heroList.removeIf(hero -> hero.getTitle().equalsIgnoreCase(title));
     }
 
-    public void displayHeroes() {
-        for (Hero h : heroList) {
-            System.out.println(h);
+    public static void searchComic(String[] titles, String[] heroes, String target) {
+        for (int i = 0; i < titles.length; i++) {
+            if (titles[i].equalsIgnoreCase(target)) {
+                System.out.println("Found Comic:");
+                System.out.println("Title: " + titles[i]);
+                System.out.println("Hero: " + heroes[i]);
+                return;
+            }
         }
+        System.out.println("Comic not found: " + target);
     }
 
-    public void sortHeroesByPower() {
-        Collections.sort(heroList, (a, b) -> b.getPowerLevel() - a.getPowerLevel());
-    }
-
-    public ArrayList<Hero> getHeroList() {
-        return heroList;
+    public static double calculateAverage(int[] powerLevels) {
+        int sum = 0;
+        for (int power : powerLevels) {
+            sum += power;
+        }
+        return (double) sum / powerLevels.length;
     }
 }
